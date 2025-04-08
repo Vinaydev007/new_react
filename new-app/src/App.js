@@ -1,25 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-
+import MovieCard from "./component/MovieCard"
 function App() {
+  let product=[{
+    title:"car",
+    desc:"car is a four wheel vehicle",
+    price:10000,
+    model:"xuv"
+  },{
+    title:"bike",
+    desc:"bike is a two wheel vehicle",
+    price:50000,
+    model:"rx100"
+  },{
+    title:"ship",
+    desc:"no desc",
+    price:100000,
+    model:"large"
+  }]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    product.map((item)=>{
+     return <MovieCard props={item}/>
+    }));
 
+  }
 export default App;
